@@ -5,7 +5,7 @@ interface IDealsResponse {
   deals: IDeal[];
 }
 
-interface IDeal {
+export interface IDeal {
   transport: string;
   departure: string;
   arrival: string;

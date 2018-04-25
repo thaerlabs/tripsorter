@@ -1,6 +1,7 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
 import CitySelect from './components/CitySelect';
+import DealsList from './components/DealsList';
 
 interface IAppState {
   departure: string;
@@ -12,9 +13,15 @@ class App extends React.Component<{}, IAppState> {
     arrival: ''
   };
 
-  public render() {
+  public render(): React.ReactNode {
     return (
-      <div>
+      <div
+        style={{
+          width: 400,
+          margin: '0 auto',
+          textAlign: 'center'
+        }}
+      >
         <CitySelect
           label="Departure"
           onSelect={departure => {
@@ -29,6 +36,7 @@ class App extends React.Component<{}, IAppState> {
           }}
           value={this.state.arrival}
         />
+        <DealsList />
       </div>
     );
   }
