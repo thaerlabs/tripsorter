@@ -8,6 +8,7 @@
     "target": "es5",
     "jsx": "react",
     "allowJs": true,
-    "experimentalDecorators": true
+    "experimentalDecorators": true,
+    "moduleResolution": "node"
   }
 }

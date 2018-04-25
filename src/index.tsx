@@ -1,7 +1,37 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import DealStore from './DealStore';
+import CitySelect from './components/CitySelect';
 
-console.log(DealStore.cities);
+interface IAppState {
+  departure: string;
+  arrival: string;
+}
+class App extends React.Component<{}, IAppState> {
+  public state: IAppState = {
+    departure: '',
+    arrival: ''
+  };
 
-ReactDOM.render(<h1>Hello react</h1>, document.getElementById('app'));
+  public render() {
+    return (
+      <div>
+        <CitySelect
+          label="Departure"
+          onSelect={departure => {
+            this.setState({ departure });
+          }}
+          value={this.state.departure}
+        />
+        <CitySelect
+          label="Arrival"
+          onSelect={arrival => {
+            this.setState({ arrival });
+          }}
+          value={this.state.arrival}
+        />
+      </div>
+    );
+  }
+}
+
+ReactDOM.render(<App />, document.querySelector('#app'));
