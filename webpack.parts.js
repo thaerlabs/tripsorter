@@ -71,20 +71,6 @@ module.exports.fonts = {
   }
 };
 
-module.exports.json = {
-  module: {
-    rules: [
-      {
-        test: /\.json$/,
-        loader: 'json-loader'
-      }
-    ]
-  },
-  resolve: {
-    extensions: ['.json', '.js']
-  }
-};
-
 module.exports.devServer = {
   devServer: {
     host: '0.0.0.0',
@@ -103,14 +89,4 @@ module.exports.devServer = {
     new webpack.HotModuleReplacementPlugin(),
     new webpack.NoEmitOnErrorsPlugin()
   ]
-};
-
-module.exports.setEnvVar = (name, value) => {
-  return {
-    plugins: [
-      new webpack.DefinePlugin({
-        [name]: JSON.stringify(value)
-      })
-    ]
-  };
 };

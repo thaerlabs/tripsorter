@@ -47,8 +47,7 @@ const commonConfig = merge(
   parts.html,
   parts.css,
   parts.images,
-  parts.fonts,
-  parts.json
+  parts.fonts
 );
 
 const getConfig = TARGET => {
