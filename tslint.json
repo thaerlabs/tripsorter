@@ -9,6 +9,6 @@
     "ordered-imports": false,
     "arrow-parens": false,
     "no-empty": false,
-    "semicolon": [true, "always"]
+    "semicolon": [false, "always"]
   }
 }

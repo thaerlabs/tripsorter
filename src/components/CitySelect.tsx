@@ -4,7 +4,7 @@ import Select from 'material-ui/Select';
 import { FormControl, FormHelperText } from 'material-ui/Form';
 import Input, { InputLabel } from 'material-ui/Input';
 import { withStyles, Theme } from 'material-ui/styles';
-import DealStore from '../DealStore';
+import store from '../store';
 
 // Component props interface
 interface ICityDropDownProps {
@@ -29,7 +29,7 @@ const CitySelect = decorate<ICityDropDownProps>(
         <MenuItem value="">
           <em>Select a City</em>
         </MenuItem>
-        {DealStore.cities.map(city => (
+        {store.cities.map(city => (
           <MenuItem key={city} value={city}>
             {city}
           </MenuItem>
