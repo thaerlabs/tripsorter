@@ -115,7 +115,7 @@ const decorate = withStyles((theme: Theme) => ({
     marginBottom: theme.spacing.unit * 3
   }
 }));
-const DealsListItem = decorate<{ deal: IDeal }>(({ deal, classes }) => (
+const TripItem = decorate<{ deal: IDeal }>(({ deal, classes }) => (
   <Paper className={classes.container} elevation={4}>
     <Grid container alignContent="space-around" xs={12} alignItems="center">
       {/* Left Column */}
@@ -148,4 +148,4 @@ const DealsListItem = decorate<{ deal: IDeal }>(({ deal, classes }) => (
   </Paper>
 ));
 
-export default DealsListItem;
+export default TripItem;
