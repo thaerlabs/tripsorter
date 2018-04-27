@@ -57,6 +57,10 @@ const decorateTripInfo = withStyles((theme: Theme) => ({
   text: {
     fontSize: theme.typography.body2.fontSize
   },
+  infoText: {
+    marginLeft: 2,
+    verticalAlign: 'text-bottom'
+  },
   icon: {
     fontSize: 15
   }
@@ -66,26 +70,21 @@ const TripInfo = decorateTripInfo<{
   transport: string;
   duration: { h: string; m: string };
 }>(({ classes, reference, transport, duration }) => (
-  <Grid container spacing={8} alignItems="center">
+  <Grid container spacing={16} alignItems="center">
     {/* INFO Reference */}
     <Grid item>
       <Typography variant="caption" className={classes.text}>
         <Bookmark className={classes.icon} />
-        {reference}
-      </Typography>
-    </Grid>
-    {/* INFO Transport */}
-    <Grid item>
-      <Typography variant="caption" className={classes.text}>
-        <Directions className={classes.icon} />
-        {transport}
+        <span className={classes.infoText}>{reference}</span>
       </Typography>
     </Grid>
     {/* INFO Travel Time */}
     <Grid item>
       <Typography variant="caption" className={classes.text}>
         <AccessTime className={classes.icon} />
-        {duration.h}h {duration.m}m
+        <span className={classes.infoText}>
+          {duration.h}h {duration.m}m
+        </span>
       </Typography>
     </Grid>
   </Grid>
@@ -112,12 +111,13 @@ const TripPricing: React.SFC<{
 const decorate = withStyles((theme: Theme) => ({
   container: {
     padding: theme.spacing.unit * 2,
-    marginBottom: theme.spacing.unit * 3
+    marginBottom: theme.spacing.unit * 3,
+    borderRadius: 5
   }
 }));
 const TripItem = decorate<{ deal: IDeal }>(({ deal, classes }) => (
   <Paper className={classes.container} elevation={4}>
-    <Grid container alignContent="space-around" xs={12} alignItems="center">
+    <Grid container alignContent="space-around" alignItems="center">
       {/* Left Column */}
       <Grid item xs={9}>
         <Grid container direction="row" spacing={16} alignItems="center">
