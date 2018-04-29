@@ -14,7 +14,7 @@
 
 ## Running tests
 
-* `npx run jest`
+* `npx jest` or `yarn test` or `npm t`
 
 ## Tech and Libraries
 

@@ -4,7 +4,8 @@
   "main": "index.js",
   "scripts": {
     "dev": "webpack-dev-server",
-    "build": "webpack"
+    "build": "webpack",
+    "test": "jest"
   },
   "author": {
     "name": "Thaer Abbas",
@@ -42,17 +43,8 @@
     "transform": {
       "^.+\\.(j|t)sx?$": "ts-jest"
     },
-    "transformIgnorePatterns": [
-      "<rootDir>/node_modules/(?!lodash-es/.*)"
-    ],
+    "transformIgnorePatterns": ["<rootDir>/node_modules/(?!lodash-es/.*)"],
     "testRegex": "(/__tests__/.*|(\\.|/)(test|spec))\\.(jsx?|tsx?)$",
-    "moduleFileExtensions": [
-      "ts",
-      "tsx",
-      "js",
-      "jsx",
-      "json",
-      "node"
-    ]
+    "moduleFileExtensions": ["ts", "tsx", "js", "jsx", "json", "node"]
   }
 }
