@@ -12,6 +12,10 @@
 
 * run `yarn build` or `npm run build`
 
+## Running tests
+
+* `npx run jest`
+
 ## Tech and Libraries
 
 * Typescript
