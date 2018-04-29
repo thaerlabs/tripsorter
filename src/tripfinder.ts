@@ -49,7 +49,7 @@ export function findPath(
   visited: string[] = []
 ): IDeal[] {
   const modeField = mode === 'fastest' ? 'durationInMinutes' : 'price';
-  // direct take
+  // find direct path
   const direct = graph[origin][destination];
 
   if (direct) {
@@ -59,6 +59,7 @@ export function findPath(
   const originNeighbours = Object.keys(graph[origin]);
   const destinationNeighbours = Object.keys(graph[destination]);
 
+  // look for intersection
   const connection = intersection(originNeighbours, destinationNeighbours)
     .map(city => {
       return graph[city][destination][mode];
@@ -76,6 +77,7 @@ export function findPath(
     ];
   }
 
+  // loop on the neighbours and recursively look for alternative paths
   if (step < MAX_STEPS && !includes(visited, origin)) {
     const alternativePaths = originNeighbours
       .map(city => ({
@@ -99,9 +101,11 @@ export function findPath(
             city: alternativePath.city
           };
         })
+        // compare paths and find the winner
         .reduce((prevPath, currPath) => {
           return prevPath.pathCost < currPath.pathCost ? prevPath : currPath;
         });
+      // build up the path based on visited nodes
       const visitedPath = buildPath([
         ...visited,
         origin,
@@ -115,6 +119,7 @@ export function findPath(
   return [];
 }
 
+// structure data for convinience of access
 function buildGraph(
   deals: IDeal[]
 ): {
