@@ -5,11 +5,12 @@ import CssBaseline from 'material-ui/CssBaseline';
 import Grid from 'material-ui/Grid';
 import Snackbar from 'material-ui/Snackbar';
 import { MuiThemeProvider, createMuiTheme } from 'material-ui/styles';
-import { red } from 'material-ui/colors';
+import { red, grey } from 'material-ui/colors';
 
 import SearchForm from './components/SearchForm';
-import DealsList from './components/DealsList';
+import TripList from './components/TripList';
 import { findPath, IDeal } from './tripfinder';
+import TripTotal from 'components/TripTotal';
 
 const logo = require('../public/logo.svg');
 
@@ -30,8 +31,9 @@ const styles = {
     marginTop: 30,
     paddingTop: 20,
     paddingRight: 40,
+    paddingBottom: 10,
     paddingLeft: 40,
-    backgroundColor: '#F5F5F5',
+    backgroundColor: grey[50],
     borderRadius: 20
   }
 };
@@ -88,9 +90,8 @@ class App extends React.Component<{}, IAppState> {
                 mode={mode}
                 onSubmit={this.handleSubmit}
               />
-              <Grid>
-                <DealsList deals={trip} />
-              </Grid>
+              <TripList deals={trip} />
+              <TripTotal deals={trip} />
             </div>
           </Grid>
         </Grid>
