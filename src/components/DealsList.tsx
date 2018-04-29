@@ -1,14 +1,14 @@
 import * as React from 'react';
 import List from 'material-ui/List';
 import TripItem from './TripItem';
-import { IDeal } from '../store';
+import { IDeal } from '../tripfinder';
 
 interface IDealsListProps {
   deals: IDeal[];
 }
 const DealsList: React.SFC<IDealsListProps> = ({ deals }) => (
   <List>
-    {deals.map((deal, index) => <TripItem deal={deal} key={index} />)}
+    {deals && deals.map((deal, index) => <TripItem deal={deal} key={index} />)}
   </List>
 );
 

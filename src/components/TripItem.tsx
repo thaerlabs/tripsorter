@@ -16,7 +16,7 @@ import AccessTime from '@material-ui/icons/AccessTime';
 import Directions from '@material-ui/icons/Directions';
 import Bookmark from '@material-ui/icons/Bookmark';
 import Paper from 'material-ui/Paper';
-import store, { IDeal } from '../store';
+import { currency, IDeal } from '../tripfinder';
 
 const decorateTripIcon = withStyles((theme: Theme) => ({
   icon: {
@@ -92,12 +92,12 @@ const TripInfo = decorateTripInfo<{
 
 const TripPricing: React.SFC<{
   currency: string;
-  cost: number;
+  price: number;
   discount: number;
-}> = ({ currency, cost, discount }) => (
+}> = ({ currency, price, discount }) => (
   <>
     <Typography align="right" variant="title">
-      {cost} {currency}
+      {price} {currency}
     </Typography>
     {discount > 0 && (
       <Typography align="right" variant="caption">
@@ -139,8 +139,8 @@ const TripItem = decorate<{ deal: IDeal }>(({ deal, classes }) => (
       {/* Right Column */}
       <Grid item xs={3}>
         <TripPricing
-          currency={store.currency}
-          cost={deal.cost}
+          currency={currency}
+          price={deal.price}
           discount={deal.discount}
         />
       </Grid>
