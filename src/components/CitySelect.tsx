@@ -2,7 +2,7 @@ import * as React from 'react';
 import { MenuItem } from 'material-ui/Menu';
 import Select from 'material-ui/Select';
 import { FormControl, FormHelperText } from 'material-ui/Form';
-import Input, { InputLabel } from 'material-ui/Input';
+import { InputLabel } from 'material-ui/Input';
 import { withStyles, Theme } from 'material-ui/styles';
 import { cities } from '../tripfinder';
 

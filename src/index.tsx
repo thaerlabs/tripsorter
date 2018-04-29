@@ -1,6 +1,5 @@
 import * as React from 'react';
 import * as ReactDOM from 'react-dom';
-import { TextAlignProperty } from 'csstype';
 import CssBaseline from 'material-ui/CssBaseline';
 import Grid from 'material-ui/Grid';
 import Snackbar from 'material-ui/Snackbar';
@@ -9,8 +8,8 @@ import { red, grey } from 'material-ui/colors';
 
 import SearchForm from './components/SearchForm';
 import TripList from './components/TripList';
-import { findPath, IDeal } from './tripfinder';
 import TripTotal from 'components/TripTotal';
+import { findPath, IDeal } from './tripfinder';
 
 const logo = require('../public/logo.svg');
 

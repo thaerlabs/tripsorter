@@ -1,11 +1,5 @@
 import * as React from 'react';
 import { withStyles, Theme } from 'material-ui/styles';
-import List, {
-  ListItem,
-  ListItemText,
-  ListItemSecondaryAction
-} from 'material-ui/List';
-import Avatar from 'material-ui/Avatar';
 import Typography from 'material-ui/Typography/Typography';
 import Grid from 'material-ui/Grid/Grid';
 import DirectionsBus from '@material-ui/icons/DirectionsBus';
@@ -13,7 +7,6 @@ import DirectionsRailway from '@material-ui/icons/DirectionsRailway';
 import DirectionsCar from '@material-ui/icons/DirectionsCar';
 import ArrowForward from '@material-ui/icons/ArrowForward';
 import AccessTime from '@material-ui/icons/AccessTime';
-import Directions from '@material-ui/icons/Directions';
 import Bookmark from '@material-ui/icons/Bookmark';
 import Paper from 'material-ui/Paper';
 import { currency, IDeal } from '../tripfinder';

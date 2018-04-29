@@ -1,12 +1,4 @@
-import {
-  uniq,
-  intersection,
-  forEach,
-  includes,
-  omit,
-  sumBy,
-  uniqBy
-} from 'lodash-es';
+import { uniq, intersection, includes, omit, sumBy, uniqBy } from 'lodash-es';
 import { applyDiscount, transformToMinutes } from './utils';
 
 const data = require('./response.json');
